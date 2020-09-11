@@ -32,7 +32,7 @@ app.use(morgan('dev')); //dev - in development mode, shows stuff in the console
 app.use(bodyParser.json()); 
 app.use(cookieParser());
 //cors
-if(process.env.NODE_ENV = 'development'){
+if(process.env.NODE_ENV === 'development'){
     app.use(cors({ origin: `${process.env.CLIENT_URL}` })); //alowes us to request/respond from the client origin to the development origin even when they ar on different ports
 }
 

@@ -55,7 +55,12 @@ exports.update = (req, res) => {
             });
         }
         let user = req.profile;
+	let existingRole = user.role;
+	let existingEmail = user.email;
+
         user = _.extend(user, fields);
+	user.role = existingRole;
+        user.email = existingEmail;
 
         if (files.photo) {
             if (files.photo.size > 10000000) {
