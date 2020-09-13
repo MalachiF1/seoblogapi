@@ -7,7 +7,7 @@ exports.contactForm = (req, res) => {
 
     const emailData = {
         to: process.env.EMAIL_TO,
-        from: email,
+        from: process.env.EMAIL_FROM,
         subject: `Contact form - ${process.env.APP_NAME}`,
         text: `Email received from contact form \n
                Sender name: ${name} \n 
@@ -20,7 +20,7 @@ exports.contactForm = (req, res) => {
             <p>Sender message: ${message}</p>
             <hr />
             <p>This email may contain sensetive informaition</p>
-            <p>http://seoblog.com</p>
+            <p>https://blog.fraenkel.name</p>
         `
     };
 
@@ -41,7 +41,7 @@ exports.contactBlogAuthorForm = (req, res) => {
 
     const emailData = {
         to: mailList,
-        from: email,
+        from: process.env.EMAIL_FROM,
         subject: `Someone messaged you from - ${process.env.APP_NAME}`,
         text: `Email received from contact form \n
                Sender name: ${name} \n 
@@ -54,7 +54,7 @@ exports.contactBlogAuthorForm = (req, res) => {
             <p>message: ${message}</p>
             <hr />
             <p>This email may contain sensetive informaition</p>
-            <p>http://seoblog.com</p>
+            <p>https://blog.fraenkel.name</p>
         `
     };
 
